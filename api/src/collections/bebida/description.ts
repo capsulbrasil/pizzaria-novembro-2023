@@ -30,22 +30,14 @@ export const [Bebida, description] = defineDescription({
     name: {
       type: 'string'
     }
+
+    
   },
   presets: [
     'crud'
   ],
   formLayout: {
     fields: {
-      name: {
-        if: {
-          operator: 'notin',
-          term1: '_id',
-          term2: [
-            null,
-            undefined
-          ]
-        }
-      }
     }
   }
 })
