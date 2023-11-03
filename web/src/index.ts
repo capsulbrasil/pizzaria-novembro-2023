@@ -28,7 +28,7 @@ const options = defineOptions({
       children: [
         '/dashboard/pizza',
         '/dashboard/user',
-        '/dashboard/bebida',
+        '/dashboard/drink',
         '/dashboard/combo'
       ]
     }

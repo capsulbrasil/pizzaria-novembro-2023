@@ -16,6 +16,33 @@ router.GET('/hello-world', (_context) => {
   }
 })
 
+
+router.GET("/drink/non-alcoholic", async (_context) => {
+  const nonAlchool =  await _context.collections.drink.functions.getAll(
+    { filters: { 
+        $or: [
+          {isalcoholic: false}, 
+          {isalcoholic: 
+            {$exists: false}
+          } 
+        ] 
+      }
+    });
+    
+  return nonAlchool;
+});
+
+router.GET("/combo/cheaperthan", async (_context) => {
+  const price: number = +_context.request.query.query.price
+  const combosCheaperThanPrice = await _context.collections.combo.functions.getAll(
+    { filters: { 
+      price: { $lte: price} 
+    }
+  });
+
+  return combosCheaperThanPrice;
+});
+
 init(null, (context) => {
   return router.install(context)
 })
