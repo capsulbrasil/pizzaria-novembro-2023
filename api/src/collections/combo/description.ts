@@ -4,19 +4,20 @@ export const [Combo, description] = defineDescription({
   $id: 'combo',
   icon: 'box',
   properties: {
-    // pizzas: {
-    //   type: 'array',
-    //   items: {
-    //     $ref: 'pizza',
-    //   }
-    // },
+    pizzas: {
+      type: 'array',
+      items: {
+        $ref: 'pizza',
+      },
+      s$populate: [ "ingredients" ]
+    },
     drinks: {
       type: 'array',
       items: {
-        $ref: 'bebida',
+        $ref: 'drink',
       }
     },
-    preco: {
+    price: {
       type: 'number'
     },
     name: {

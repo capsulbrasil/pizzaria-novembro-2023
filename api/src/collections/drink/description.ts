@@ -1,7 +1,7 @@
 import { defineDescription } from 'sonata-api'
 
-export const [Bebida, description] = defineDescription({
-  $id: 'bebida',
+export const [Drink, description] = defineDescription({
+  $id: 'drink',
   icon: 'glass',
   indexes: [
     'name'
@@ -12,23 +12,27 @@ export const [Bebida, description] = defineDescription({
     },
     drinktype: {
       enum: [
-        "Cerveja",
-        "Refrigerante",
-        "Suco",
-        "Água",
-        "Vinho",
+        "Beer",
+        "Soda",
+        "Juice",
+        "Water",
+        "Wine",
         "Whisky",
-        "Champanhe",
+        "Champange",
         "Vodka",
         "Tequila",
-        "Cachaça",
-        "Licor",
+        "White Lightining",
+        "Liquor",
         "Gin",
         "Rum",
-        "Saquê",
-        "Energético",
-        "Outros"
+        "Sake",
+        "Energy Drink",
+        "Others"
       ]
+    },
+    isalcoholic: {
+      type: "boolean",
+      default: "false"
     },
     name: {
       type: 'string'

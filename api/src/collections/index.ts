@@ -1,3 +1,3 @@
 export * from './pizza'
-export * from './bebida'
+export * from './drink'
 export * from './combo'

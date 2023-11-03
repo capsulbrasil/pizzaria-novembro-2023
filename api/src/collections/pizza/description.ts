@@ -17,10 +17,10 @@ export const [Pizza, description] = defineDescription({
         properties: {
           name: {
             enum: [
-              'calabresa',
-              'mussarela',
+              'pepperoni',
+              'mozzarella',
               'catupiry',
-              'frango',
+              'chicken',
               'champignon',
             ]
           },
