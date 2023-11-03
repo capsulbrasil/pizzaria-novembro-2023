@@ -2,25 +2,26 @@ import { defineDescription } from 'sonata-api'
 
 export const [Combo, description] = defineDescription({
   $id: 'combo',
-  icon: 'glass',
+  icon: 'box',
   properties: {
-    pizzas: {
-      type: 'array',
-      items: {
-        type: 'object',
-      }
-    },
+    // pizzas: {
+    //   type: 'array',
+    //   items: {
+    //     $ref: 'pizza',
+    //   }
+    // },
     drinks: {
       type: 'array',
       items: {
-        type: 'object',
+        $ref: 'bebida',
       }
+    },
+    preco: {
+      type: 'number'
     },
     name: {
       type: 'string'
     }
-
-    
   },
   presets: [
     'crud'

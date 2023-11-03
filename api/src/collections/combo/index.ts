@@ -8,7 +8,7 @@ export const combo = defineCollection(() => ({
     'get',
     'getAll',
     'insert',
-    'remove'
+    'remove',
   ]),
   accessControl: {
     roles: {

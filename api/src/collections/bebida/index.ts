@@ -8,7 +8,9 @@ export const bebida = defineCollection(() => ({
     'get',
     'getAll',
     'insert',
-    'remove'
+    'remove',
+    'upload',
+    'removeFile'
   ]),
   accessControl: {
     roles: {

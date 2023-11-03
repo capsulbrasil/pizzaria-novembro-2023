@@ -3,6 +3,9 @@ import { defineDescription } from 'sonata-api'
 export const [Bebida, description] = defineDescription({
   $id: 'bebida',
   icon: 'glass',
+  indexes: [
+    'name'
+  ],
   properties: {
     price: {
       type: 'number'
@@ -29,7 +32,13 @@ export const [Bebida, description] = defineDescription({
     },
     name: {
       type: 'string'
-    }
+    },
+    picture: {
+      $ref: 'file',
+      s$accept: [
+        'image/*',
+      ]
+    },
 
     
   },
