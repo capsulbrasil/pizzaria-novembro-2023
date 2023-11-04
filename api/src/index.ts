@@ -28,7 +28,8 @@ router.GET("/drink/non-alcoholic", async (_context) => {
 });
 
 router.GET("/combo/cheaperthan", async (_context) => {
-  const price: number = +_context.request.query.query.price;
+  console.log(_context.request.query);
+  const price: number = +_context.request.query.price;
   const combosCheaperThanPrice = await _context.collections.combo.functions.getAll(
     { filters: { 
       price: { $lte: price} 
