@@ -45,6 +45,29 @@ router.GET('/get-events-in-next_days', (context) => {
   return result;
 })
 
+
+router.GET("/drink/non-alcoholic", async (_context) => {
+  const nonAlchool =  await _context.collections.drink.functions.getAll(
+    { filters: { 
+        isalcoholic: { $ne: true }
+      }
+    });
+    
+  return nonAlchool;
+});
+
+router.GET("/combo/cheaperthan", async (_context) => {
+  console.log(_context.request.query);
+  const price: number = +_context.request.query.price;
+  const combosCheaperThanPrice = await _context.collections.combo.functions.getAll(
+    { filters: { 
+      price: { $lte: price} 
+    }
+  });
+
+  return combosCheaperThanPrice;
+});
+
 init(null, (context) => {
   return router.install(context)
 })

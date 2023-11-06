@@ -30,7 +30,9 @@ const options = defineOptions({
         '/dashboard/table',
         '/dashboard/employee',
         '/dashboard/event',
-        '/dashboard/user'
+        '/dashboard/user',
+        '/dashboard/drink',
+        '/dashboard/combo'
       ]
     }
   }
