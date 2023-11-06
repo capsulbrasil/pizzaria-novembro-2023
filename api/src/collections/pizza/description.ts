@@ -2,7 +2,7 @@ import { defineDescription } from 'sonata-api'
 
 export const [Pizza, description] = defineDescription({
   $id: 'pizza',
-  icon: 'apps',
+  icon: 'pizza-slice',
   properties: {
     price: {
       type: 'number'
@@ -53,7 +53,8 @@ export const [Pizza, description] = defineDescription({
             null,
             undefined
           ]
-        }
+        },
+      
       }
     }
   }
