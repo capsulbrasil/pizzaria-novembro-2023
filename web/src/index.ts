@@ -21,16 +21,15 @@ const options = defineOptions({
   },
   menuSchema: {
     start: {
-      meta: {
-        title: 'Início',
-        icon: 'home'
-      },
       children: [
         '/dashboard/pizza',
         '/dashboard/table',
         '/dashboard/employee',
         '/dashboard/event',
-        '/dashboard/user'
+        '/dashboard/user',
+        '/dashboard/drink',
+        '/dashboard/customer',
+        '/dashboard/combo'
       ]
     }
   }
