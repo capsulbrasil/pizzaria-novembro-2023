@@ -38,6 +38,9 @@ declare module 'vue-router/auto/routes' {
     '/': RouteRecordInfo<'/', '/', Record<never, never>, Record<never, never>>,
     '/dashboard/': RouteRecordInfo<'/dashboard/', '/dashboard', Record<never, never>, Record<never, never>>,
     '/drink/': RouteRecordInfo<'/drink/', '/drink', Record<never, never>, Record<never, never>>,
+    '/drink/combo': RouteRecordInfo<'/drink/combo', '/drink/combo', Record<never, never>, Record<never, never>>,
+    '/drink/drink': RouteRecordInfo<'/drink/drink', '/drink/drink', Record<never, never>, Record<never, never>>,
+    '/drink/pizza': RouteRecordInfo<'/drink/pizza', '/drink/pizza', Record<never, never>, Record<never, never>>,
   }
 }
 
