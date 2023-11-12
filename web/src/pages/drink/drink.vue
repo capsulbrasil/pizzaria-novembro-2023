@@ -51,38 +51,8 @@ async function selectDrinkToEdit(){
 </script>
 
 <template>
-    <aeria-grid>
-<w-grid>
-  <w-card
-    v-for="drink in drinks"
-    :key="drink.name"
-    >
-    <template #badge v-if="drink.name">
-      <w-badge>Premium</w-badge>
-    </template>
 
-    <template #footer>
-      <div class="tw-text-lg">{{ drink.name }}</div>
-      <div class="
-        tw-text-[10pt]
-        tw-opacity-80
-        tw-mt-1
-      ">
-      {{ drink.name }}
-      </div>
-    </template>
-
-    <template #actions>
-      <w-icon
-        v-clickable
-        reactive
-        icon="ellipsis-v"
-      ></w-icon>
-    </template>
-  </w-card>
-</w-grid>
-
-    <!-- <div class="tw-flex tw-flex-col tw-items-center tw-py-4">
+    <div class="tw-flex tw-flex-col tw-items-center tw-py-4">
 
         <h2>Drinks</h2>
         <w-button @click="showDrinks()" class="rounded-full ">
@@ -130,9 +100,9 @@ async function selectDrinkToEdit(){
 
             <label for="isalcoholic">É Alcólica</label>
             <input type="checkbox" name="isalcoholic" id="isalcoholic" v-model="drinkToCreate.isalcoholic">
-
+<!-- 
             <label for="picture">Imagem</label>
-            <input type="file" id="picture" v-model="drinkToCreate.picture">
+            <input type="file" id="picture" v-model="drinkToCreate.picture"> -->
 
             <button>Submit</button>
 
@@ -164,6 +134,5 @@ async function selectDrinkToEdit(){
             <button>Deletar</button>
         </form>
 
-    </div> -->
-</aeria-grid>
+    </div>
 </template>
