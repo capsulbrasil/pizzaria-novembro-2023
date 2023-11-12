@@ -36,11 +36,11 @@ import type {
 declare module 'vue-router/auto/routes' {
   export interface RouteNamedMap {
     '/': RouteRecordInfo<'/', '/', Record<never, never>, Record<never, never>>,
+    '/combo/': RouteRecordInfo<'/combo/', '/combo', Record<never, never>, Record<never, never>>,
+    '/combo/combo': RouteRecordInfo<'/combo/combo', '/combo/combo', Record<never, never>, Record<never, never>>,
     '/dashboard/': RouteRecordInfo<'/dashboard/', '/dashboard', Record<never, never>, Record<never, never>>,
     '/drink/': RouteRecordInfo<'/drink/', '/drink', Record<never, never>, Record<never, never>>,
-    '/drink/combo': RouteRecordInfo<'/drink/combo', '/drink/combo', Record<never, never>, Record<never, never>>,
     '/drink/drink': RouteRecordInfo<'/drink/drink', '/drink/drink', Record<never, never>, Record<never, never>>,
-    '/drink/pizza': RouteRecordInfo<'/drink/pizza', '/drink/pizza', Record<never, never>, Record<never, never>>,
   }
 }
 
