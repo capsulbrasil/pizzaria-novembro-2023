@@ -11,6 +11,7 @@ let drinksAreShown = ref(false);
 
 onMounted(async () => {
     const result = await drinkStore.$functions.getAll();
+    console.log(result.data);
     drinks.push(result.data);
 
 })
