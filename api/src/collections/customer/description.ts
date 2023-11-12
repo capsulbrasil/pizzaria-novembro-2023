@@ -3,6 +3,9 @@ import { defineDescription } from 'sonata-api'
 export const [Customer, description] = defineDescription({
   $id: 'customer',
   icon: 'head-side',
+  indexes: [
+    "name"
+  ],
   properties: {
     name: {
       type: 'string',

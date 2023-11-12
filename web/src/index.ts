@@ -31,7 +31,8 @@ const options = defineOptions({
         '/dashboard/combo',
         '/dashboard/drink',
         '/dashboard/customer',
-        '/dashboard/combo'
+        '/dashboard/combo',
+        '/dashboard/order'
       ]
     }
   }

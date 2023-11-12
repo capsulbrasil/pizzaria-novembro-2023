@@ -9,16 +9,14 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    ListElement: typeof import('./src/components/ListElement.vue')['default']
     PizzaView: typeof import('./src/components/PizzaView.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    TableView: typeof import('./src/components/TableView.vue')['default']
     WBadge: typeof import('@waltz-ui/ui')['WBadge']
     WButton: typeof import('@waltz-ui/ui')['WButton']
     WCard: typeof import('@waltz-ui/ui')['WCard']
     WGrid: typeof import('@waltz-ui/ui')['WGrid']
     WIcon: typeof import('@waltz-ui/ui')['WIcon']
-    TablePage: typeof import('./src/components/TablePage.vue')['default']
-    TableView: typeof import('./src/components/TableView.vue')['default']
   }
 }

@@ -3,6 +3,9 @@ import { defineDescription } from 'sonata-api'
 export const [Combo, description] = defineDescription({
   $id: 'combo',
   icon: 'box',
+  indexes: [
+    "name"
+  ],
   properties: {
     pizzas: {
       type: 'array',
