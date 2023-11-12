@@ -11,6 +11,10 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    WBadge: typeof import('@waltz-ui/ui')['WBadge']
     WButton: typeof import('@waltz-ui/ui')['WButton']
+    WCard: typeof import('@waltz-ui/ui')['WCard']
+    WGrid: typeof import('@waltz-ui/ui')['WGrid']
+    WIcon: typeof import('@waltz-ui/ui')['WIcon']
   }
 }
