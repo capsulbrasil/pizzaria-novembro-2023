@@ -14,11 +14,7 @@ declare module '@vue/runtime-core' {
     PizzaView: typeof import('./src/components/pizza-view.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    TableView: typeof import('./src/components/TableView.vue')['default']
-    WBadge: typeof import('@waltz-ui/ui')['WBadge']
+    TableView: typeof import('./src/components/table-view.vue')['default']
     WButton: typeof import('@waltz-ui/ui')['WButton']
-    WCard: typeof import('@waltz-ui/ui')['WCard']
-    WGrid: typeof import('@waltz-ui/ui')['WGrid']
-    WIcon: typeof import('@waltz-ui/ui')['WIcon']
   }
 }

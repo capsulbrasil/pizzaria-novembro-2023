@@ -5,6 +5,7 @@ import waltzPtbr from '@waltz-ui/i18n-ptbr'
 import '@waltz-ui/ui/style.css'
 import 'waltz-tailwind-layout/style.css'
 import '../static/main.css'
+import "@waltz-ui/ui/themes/default.less"
 
 const options = defineOptions({
   component: WMain,
@@ -31,7 +32,8 @@ const options = defineOptions({
         '/dashboard/combo',
         '/dashboard/drink',
         '/dashboard/customer',
-        '/dashboard/combo'
+        '/dashboard/combo',
+        '/dashboard/order'
       ]
     }
   }

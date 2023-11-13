@@ -9,8 +9,6 @@ export const [Order, description] = defineDescription({
     price: {
       type: "number",
       s$getter: (value: any) => {
-        value.functions.count();
-
         const pizzasPrices = value.pizzas.map((pizza: any) => pizza.pizza.price * pizza.quantity);
         const combosPrices = value.combos.map((combo: any) => combo.combo.price * combo.quantity);
         const drinksPrices = value.drinks.map((drink: any) => drink.drink.price * drink.quantity);
@@ -75,11 +73,11 @@ export const [Order, description] = defineDescription({
     },
     name: {
       type: "string",
-      s$getter: (value: any) => {
-        const count = 0; //????? retornaNumeroDePedidos() ou algo assim
-        const orderName = `# ${count} + ${value.customer.name}`
-        return orderName;
-      }
+      // s$getter: (value: any) => {
+      //   const count = 0; //????? retornaNumeroDePedidos() ou algo assim
+      //   const orderName = `# ${count} + ${value.customer.name}`
+      //   return orderName;
+      // }
     },
   },
   presets: ["crud"],

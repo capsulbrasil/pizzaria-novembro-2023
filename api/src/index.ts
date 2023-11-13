@@ -1,4 +1,4 @@
-import { collections, init, makeRouter } from 'sonata-api'
+import { init, left, makeRouter, right } from 'sonata-api'
 export * as collections from './collections'
 
 const router = makeRouter();
@@ -20,20 +20,21 @@ router.GET('/pizza/get-in-price-range', (context) => {
   }).toArray();
 })  
 
-router.GET('/event/get-in-next-days', (context) => {
+router.GET('/event/get-in-next-days', async (context) => {
   const days: number = context.request.query.days;
 
   if(days <= 0)
-    return { message: "Invalid query." };
+    return left({ message: "Invalid query." });
+    // return { message: "Invalid query." };
 
   const maxDate = new Date(Date.now() + days * daysInMiliseconds);
 
-  return context.models.event.find({
+  return right(await context.models.event.find({
     start_date: {
       $gt: new Date(Date.now()),
       $lt: maxDate
     }
-  }).toArray();
+  }).toArray());
 })
 
 
@@ -43,6 +44,8 @@ router.GET("/drink/non-alcoholic", async (_context) => {
         isalcoholic: { $ne: true }
       }
     });
+
+
     
   return nonAlchool;
 });

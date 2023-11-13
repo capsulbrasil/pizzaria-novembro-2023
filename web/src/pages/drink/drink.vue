@@ -2,11 +2,12 @@
 <script setup lang="ts">
 import { condenseItem } from '@waltz-ui/web';
 import { debug } from 'console';
+import { isLeft } from 'sonata-api';
 
 
 const drinkStore = useStore("drink");
 
-let drinks = reactive([])
+let drinks = reactive([]);
 let drinksAreShown = ref(false);
 
 onMounted(async () => {
@@ -31,6 +32,7 @@ async function showNonAlchoholDrinks(){
         Accept: 'application/json',
       },  
     });
+    
     const resultJson = await result.json();
 
     drinks.length = 0;
