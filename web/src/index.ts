@@ -28,6 +28,8 @@ const options = defineOptions({
         '/dashboard/event',
         '/dashboard/user',
         '/dashboard/drink',
+        '/dashboard/combo',
+        '/dashboard/drink',
         '/dashboard/customer',
         '/dashboard/combo'
       ]
