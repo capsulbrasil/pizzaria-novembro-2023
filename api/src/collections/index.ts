@@ -2,6 +2,6 @@ export * from './pizza'
 export * from './table'
 export * from './employee'
 export * from './event'
-
+export * from './customer'
 export * from './drink'
 export * from './combo'

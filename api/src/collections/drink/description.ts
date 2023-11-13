@@ -32,7 +32,6 @@ export const [Drink, description] = defineDescription({
     },
     isalcoholic: {
       type: "boolean",
-      default: "false"
     },
     name: {
       type: 'string'

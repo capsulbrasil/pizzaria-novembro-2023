@@ -16,7 +16,7 @@ export const [Table, description] = defineDescription({
     },
     reserved:{
       type:'boolean',
-      default: false
+      default: false,
     },
     characteristic:{
       enum: ["Vista Panorâmica", "Vista da Janela", "Mesa do Chef", "Para Eventos Especiais"],
@@ -28,6 +28,7 @@ export const [Table, description] = defineDescription({
       
     }
   },
+  
   presets: [
     'crud'
   ],

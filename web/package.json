@@ -12,8 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "@waltz-ui/i18n-ptbr": "^0.0.2",
-    "waltz-tailwind-layout": "^0.0.32",
-    "waltz-ui": "^0.0.30"
+    "waltz-tailwind-layout": "latest",
+    "waltz-ui": "latest"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",

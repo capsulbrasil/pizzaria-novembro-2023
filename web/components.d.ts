@@ -9,7 +9,11 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    EventView: typeof import('./src/components/event-view.vue')['default']
+    PagePanel: typeof import('./src/components/page-panel.vue')['default']
+    PizzaView: typeof import('./src/components/pizza-view.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    TableView: typeof import('./src/components/table-view.vue')['default']
   }
 }

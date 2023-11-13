@@ -5,7 +5,15 @@ module.exports = {
       config: {
         prefix: 'tw-',
         darkMode: 'class',
-        content: ['./**/*.vue']
+        content: ['./**/*.vue'],
+        theme: {
+          extend: {
+            width: {
+              '1/10': '10%',
+              '1/14' : '7%'
+            },
+          }
+        }
       },
     },
   },
