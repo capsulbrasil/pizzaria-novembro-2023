@@ -1,12 +1,14 @@
 <template>
-  <template v-for="table in unreservedTables">
-    <tr>
-      <p class="tw-underline tw-inline">
-        Mesa <span class="tw-text-red-700 tw-underline">{{ table.number }}</span>
-      </p>
-      <p class="tw-text-sm tw-inline"> - {{ table.characteristic }}</p>
-    </tr>
-  </template>
+  <table class="tw-border-separate tw-border-spacing-3">
+    <div v-for="table in unreservedTables">
+      <tr class="tw-text-xl tw-font-bold">
+        <p class="tw-inline">
+          Mesa <span class="tw-text-red-700">{{ table.number }}</span>
+        </p>
+        <p class="tw-text-sm tw-inline"> - {{ table.characteristic }}</p>
+      </tr>
+    </div>
+  </table>
 </template>
 
 <script setup lang="ts">
@@ -32,7 +34,7 @@
         number: x.number,
         characteristic: x.characteristic
       }
-    });
+    }).sort((a,b)=>a.number - b.number);
   }
 
   const unreservedTables = ref(await getUnreservedTables());

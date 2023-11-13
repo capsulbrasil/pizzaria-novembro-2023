@@ -11,9 +11,8 @@ export const [Event, description] = defineDescription({
       type: 'string',
       format: 'date-time'
     },
-    end_date:{
-      type: 'string',
-      format: 'date-time'
+    duration_in_minutes:{
+      type: 'number',
     },
     discounts:{
       type: 'array',
@@ -39,7 +38,7 @@ export const [Event, description] = defineDescription({
   presets: [
     'crud'
   ],
-  required: ["type", "start_date", "end_date"],
+  required: ["type", "start_date", "duration_in_minutes"],
   formLayout:{
     fields: {
       discounts: {
