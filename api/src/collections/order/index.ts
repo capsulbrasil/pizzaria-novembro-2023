@@ -18,7 +18,8 @@ export const order = defineCollection(() => ({
       guest: {
         grant: [
           'get',
-          'getAll'
+          'getAll',
+          'insert'
         ]
       }
     }

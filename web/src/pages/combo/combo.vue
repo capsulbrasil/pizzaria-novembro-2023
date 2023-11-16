@@ -1,11 +1,10 @@
-
 <script setup lang="ts">
-import { condenseItem } from '@waltz-ui/web';
 import { debug } from 'console';
 import { privateDecrypt } from 'crypto';
 
 
 const comboStore = useStore("combo");
+const orderStore = useStore("order");
 
 let combos = reactive([])
 let combosAreShown = ref(false);
@@ -14,6 +13,23 @@ let comboPrice = ref(0);
 onMounted(async () => {
     getCombos()
 })
+
+const cart = reactive([])
+const cartOpen = ref(false)
+
+const addToCart = (combo: any) => {
+    cart.push(combo)
+    cartOpen.value = true
+}
+
+const orderInsertPayload = computed(() => {
+    const combos = orderStore.item.combos
+    return 
+})
+
+const order = () => {
+    return orderStore.$actions.deepInsert()
+}
 
 async function getCombos() {
     const result = await comboStore.$functions.getAll();
@@ -47,6 +63,30 @@ async function showCombosCheaperThan(price: string) {
 </script>
 
 <template>
+    <w-box
+        fixed-right
+        close-hint
+        v-model="cartOpen"
+        title="Carrinho"
+        @overlay-click="cartOpen = false"
+    >
+        <pre>{{ cart }}</pre>
+
+        <w-form
+            v-model="orderStore.item"
+            :form="orderStore.$actions.useProperties([
+                'customer'
+            ])"
+            collection="order"
+        ></w-form>
+
+        <template #footer>
+            <w-button large @click="order">
+                Fazer pedido
+            </w-button>
+        </template>
+    </w-box>
+
     <div class="tw-flex tw-flex-col tw-items-center tw-py-4">
 
         <h2>Combos</h2>
@@ -76,6 +116,7 @@ async function showCombosCheaperThan(price: string) {
                         <th class="tw-border tw-border-slate-600 tw-px-3">Preço</th>
                         <th class="tw-border tw-border-slate-600 tw-px-3">Pizzas</th>
                         <th class="tw-border tw-border-slate-600 tw-px-3">Bebidas</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -89,6 +130,13 @@ async function showCombosCheaperThan(price: string) {
                         </td>
                         <td class="tw-border tw-border-slate-700 tw-pl-3">
                             <li v-for="drink in combo.drinks">{{ drink.name }}</li>
+                        </td>
+                        <td class="tw-border tw-border-slate-700 tw-pl-3">
+                            <div class="tw-p-2">
+                                <w-button @click="addToCart(combo)">
+                                    Adicionar
+                                </w-button>
+                            </div>
                         </td>
                     </tr>
                 </tbody>
