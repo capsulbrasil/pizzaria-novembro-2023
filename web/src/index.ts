@@ -1,18 +1,18 @@
 import { useApp, userRoutes, dashboardRoutes, defineOptions, WMain } from 'waltz-ui'
-import { DashboardLayout, AuthWall } from 'waltz-tailwind-layout'
+import { DashboardLayout, AuthWall } from 'aeria-app-layout'
 import waltzPtbr from '@waltz-ui/i18n-ptbr'
 
 import '@waltz-ui/ui/style.css'
-import 'waltz-tailwind-layout/style.css'
+import 'aeria-app-layout/style.css'
 import '../static/main.css'
-import "@waltz-ui/ui/themes/default.less"
+import '../static/main.less'
 
 const options = defineOptions({
   component: WMain,
   dashboardComponent: DashboardLayout,
   routes: [
-    userRoutes(() => AuthWall),
-    dashboardRoutes(() => DashboardLayout),
+    userRoutes(AuthWall),
+    dashboardRoutes(DashboardLayout),
   ],
   i18n: {
     locale: 'pt_BR',
@@ -30,9 +30,7 @@ const options = defineOptions({
         '/dashboard/user',
         '/dashboard/drink',
         '/dashboard/combo',
-        '/dashboard/drink',
         '/dashboard/customer',
-        '/dashboard/combo',
         '/dashboard/order'
       ]
     }
