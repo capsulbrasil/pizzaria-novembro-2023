@@ -23,8 +23,9 @@ router.GET('/pizza/get-in-price-range', (context) => {
 router.GET('/event/get-in-next-days', async (context) => {
   const days: number = context.request.query.days;
 
-  if(days <= 0)
+  if(days <= 0) {
     return left({ message: "Invalid query." });
+  }
     // return { message: "Invalid query." };
 
   const maxDate = new Date(Date.now() + days * daysInMiliseconds);

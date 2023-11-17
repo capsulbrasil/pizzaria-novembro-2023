@@ -38,13 +38,14 @@ declare module 'vue-router/auto/routes' {
     '/': RouteRecordInfo<'/', '/', Record<never, never>, Record<never, never>>,
     '/combo/': RouteRecordInfo<'/combo/', '/combo', Record<never, never>, Record<never, never>>,
     '/combo/combo': RouteRecordInfo<'/combo/combo', '/combo/combo', Record<never, never>, Record<never, never>>,
+    '/customer': RouteRecordInfo<'/customer', '/customer', Record<never, never>, Record<never, never>>,
+    '/customer/reservar/': RouteRecordInfo<'/customer/reservar/', '/customer/reservar', Record<never, never>, Record<never, never>>,
     '/dashboard/': RouteRecordInfo<'/dashboard/', '/dashboard', Record<never, never>, Record<never, never>>,
     '/drink/': RouteRecordInfo<'/drink/', '/drink', Record<never, never>, Record<never, never>>,
     '/drink/drink': RouteRecordInfo<'/drink/drink', '/drink/drink', Record<never, never>, Record<never, never>>,
     '/events/': RouteRecordInfo<'/events/', '/events', Record<never, never>, Record<never, never>>,
     '/menu': RouteRecordInfo<'/menu', '/menu', Record<never, never>, Record<never, never>>,
     '/menu/': RouteRecordInfo<'/menu/', '/menu', Record<never, never>, Record<never, never>>,
-    '/reservar/': RouteRecordInfo<'/reservar/', '/reservar', Record<never, never>, Record<never, never>>,
   }
 }
 

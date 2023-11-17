@@ -4,7 +4,6 @@ import { condenseItem } from '@waltz-ui/web';
 import { debug } from 'console';
 import { isLeft } from 'sonata-api';
 
-
 const drinkStore = useStore("drink");
 
 let drinks = reactive([]);

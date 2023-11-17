@@ -18,7 +18,8 @@ export const table = defineCollection(() => ({
       guest: {
         grant: [
           'get',
-          'getAll'
+          'getAll',
+          'insert'
         ]
       }
     }

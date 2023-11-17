@@ -18,5 +18,6 @@ declare module '@vue/runtime-core' {
     WBox: typeof import('@waltz-ui/ui')['WBox']
     WButton: typeof import('@waltz-ui/ui')['WButton']
     WForm: typeof import('@waltz-ui/ui')['WForm']
+    WInput: typeof import('@waltz-ui/ui')['WInput']
   }
 }

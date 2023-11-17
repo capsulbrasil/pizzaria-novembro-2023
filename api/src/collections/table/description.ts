@@ -22,9 +22,10 @@ export const [Table, description] = defineDescription({
       enum: ["Vista Panorâmica", "Vista da Janela", "Mesa do Chef", "Para Eventos Especiais"],
     },
     reserved_by:{
-      type: 'string',
-      maxLength: 100,
-      default: 'Não Reservado',
+      $ref: 'customer'
+      // type: 'string',
+      // maxLength: 100,
+      // default: 'Não Reservado',
       
     }
   },
