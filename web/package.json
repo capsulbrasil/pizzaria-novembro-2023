@@ -12,7 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@waltz-ui/i18n-ptbr": "^0.0.2",
-    "waltz-tailwind-layout": "latest",
+    "aeria-app-layout": "latest",
     "waltz-ui": "latest"
   },
   "devDependencies": {

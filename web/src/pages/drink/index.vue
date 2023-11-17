@@ -2,6 +2,7 @@
     meta:
       title: Drink
       icon: drink
+      color: red
 </route>
     
 <script setup lang="ts">
