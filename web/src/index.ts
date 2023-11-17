@@ -20,21 +20,17 @@ const options = defineOptions({
       pt_BR: waltzPtbr
     }
   },
-  menuSchema: {
-    start: {
-      children: [
-        '/dashboard/pizza',
-        '/dashboard/table',
-        '/dashboard/employee',
-        '/dashboard/event',
-        '/dashboard/user',
-        '/dashboard/drink',
-        '/dashboard/combo',
-        '/dashboard/customer',
-        '/dashboard/order'
-      ]
-    }
-  }
+  menuSchema: [
+    '/dashboard/pizza',
+    '/dashboard/table',
+    '/dashboard/employee',
+    '/dashboard/event',
+    '/dashboard/user',
+    '/dashboard/drink',
+    '/dashboard/combo',
+    '/dashboard/customer',
+    '/dashboard/order'
+  ]
 })
 
 useApp(options).then((app) => {
