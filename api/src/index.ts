@@ -24,17 +24,16 @@ router.GET('/event/get-in-next-days', async (context) => {
   const days: number = context.request.query.days;
 
   if(days <= 0)
-    return left({ message: "Invalid query." });
-    // return { message: "Invalid query." };
+    return { message: "Invalid query." };
 
   const maxDate = new Date(Date.now() + days * daysInMiliseconds);
 
-  return right(await context.models.event.find({
+  return context.models.event.find({
     start_date: {
       $gt: new Date(Date.now()),
       $lt: maxDate
     }
-  }).toArray());
+  }).toArray();
 })
 
 
