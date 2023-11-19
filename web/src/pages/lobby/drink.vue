@@ -1,4 +1,10 @@
-
+<route lang="yaml">
+    meta:
+      title: Bebidas 🍷
+      icon: dashboard
+      color: drink
+</route>
+    
 <script setup lang="ts">
 import { condenseItem } from '@waltz-ui/web';
 import { debug } from 'console';
@@ -13,7 +19,7 @@ onMounted(async () => {
     getDrinks()
 })
 
-async function getDrinks(){
+async function getDrinks() {
     const result = await drinkStore.$functions.getAll();
     drinks.length = 0;
     drinks.push(result.data);
@@ -24,14 +30,14 @@ async function showDrinks() {
     drinksAreShown.value = true;
 }
 
-async function showNonAlchoholDrinks(){
+async function showNonAlchoholDrinks() {
     const result = await fetch('http://127.0.0.1:3000/api/drink/non-alcoholic', {
-      method: 'GET',
-      headers: {
-        Accept: 'application/json',
-      },  
+        method: 'GET',
+        headers: {
+            Accept: 'application/json',
+        },
     });
-    
+
     const resultJson = await result.json();
 
     drinks.length = 0;
@@ -40,6 +46,7 @@ async function showNonAlchoholDrinks(){
 
 }
 
+
 </script>
 
 <template>
@@ -47,17 +54,35 @@ async function showNonAlchoholDrinks(){
 
         <h2>Drinks</h2>
         <div class="tw-flex tw-flex-col tw-items-center">
-        <w-button @click="showDrinks()" class="rounded-full">
-            <div class="tw-text-md tw-px-2">Retornar Bebidas</div>
-        </w-button>
-        <div class="tw-my-2"></div>
+            <w-button @click="showDrinks()" class="rounded-full">
+                <div class="tw-text-md tw-px-2">Retornar Bebidas</div>
+            </w-button>
+            <div class="tw-my-2"></div>
 
-        <w-button @click="showNonAlchoholDrinks()" class="rounded-full ">
-            <div class="tw-text-md tw-px-2">Retornar Bebidas Não Alcóolicas</div>
-        </w-button>
+            <w-button @click="showNonAlchoholDrinks()" class="rounded-full ">
+                <div class="tw-text-md tw-px-2">Retornar Bebidas Não Alcóolicas</div>
+            </w-button>
         </div>
 
-        <template v-if="drinksAreShown && drinks.length > 0">
+        <w-grid v-if="drinksAreShown && drinks.length > 0" class="tw-mt-3">
+            <w-card v-for="drink in drinks[0]" :key="drink.name">
+                <div class="tw-flex tw-justify-center">
+                    <img class="tw-max-h-15" :src="drink.picture.download_link">
+                </div>
+                <template #footer>
+                    <div class="tw-text-lg">{{ drink.name }}</div>
+                    <div class="
+                        tw-text-[10pt]
+                        tw-opacity-80
+                        tw-mt-1
+                    ">
+                    </div>
+                </template>
+
+            </w-card>
+        </w-grid>        
+
+        <!-- <template v-if="drinksAreShown && drinks.length > 0">
             <table class="tw-border-collapse tw-border tw-border-slate-500 tw-mt-5">
                 <thead>
                     <tr>
@@ -83,7 +108,7 @@ async function showNonAlchoholDrinks(){
                     </tr>
                 </tbody>
             </table>
-        </template>
+        </template> -->
 
 
 

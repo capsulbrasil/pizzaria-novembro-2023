@@ -36,14 +36,15 @@ import type {
 declare module 'vue-router/auto/routes' {
   export interface RouteNamedMap {
     '/': RouteRecordInfo<'/', '/', Record<never, never>, Record<never, never>>,
-    '/combo/': RouteRecordInfo<'/combo/', '/combo', Record<never, never>, Record<never, never>>,
-    '/combo/combo': RouteRecordInfo<'/combo/combo', '/combo/combo', Record<never, never>, Record<never, never>>,
     '/customer': RouteRecordInfo<'/customer', '/customer', Record<never, never>, Record<never, never>>,
     '/customer/reservar/': RouteRecordInfo<'/customer/reservar/', '/customer/reservar', Record<never, never>, Record<never, never>>,
     '/dashboard/': RouteRecordInfo<'/dashboard/', '/dashboard', Record<never, never>, Record<never, never>>,
-    '/drink/': RouteRecordInfo<'/drink/', '/drink', Record<never, never>, Record<never, never>>,
-    '/drink/drink': RouteRecordInfo<'/drink/drink', '/drink/drink', Record<never, never>, Record<never, never>>,
     '/events/': RouteRecordInfo<'/events/', '/events', Record<never, never>, Record<never, never>>,
+    '/lobby': RouteRecordInfo<'/lobby', '/lobby', Record<never, never>, Record<never, never>>,
+    '/lobby/': RouteRecordInfo<'/lobby/', '/lobby', Record<never, never>, Record<never, never>>,
+    '/lobby/combo': RouteRecordInfo<'/lobby/combo', '/lobby/combo', Record<never, never>, Record<never, never>>,
+    '/lobby/drink': RouteRecordInfo<'/lobby/drink', '/lobby/drink', Record<never, never>, Record<never, never>>,
+    '/lobby/order': RouteRecordInfo<'/lobby/order', '/lobby/order', Record<never, never>, Record<never, never>>,
     '/menu': RouteRecordInfo<'/menu', '/menu', Record<never, never>, Record<never, never>>,
     '/menu/': RouteRecordInfo<'/menu/', '/menu', Record<never, never>, Record<never, never>>,
   }

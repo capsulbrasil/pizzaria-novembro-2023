@@ -1,3 +1,10 @@
+<route lang="yaml">
+    meta:
+      title: Combos 📦
+      icon: dashboard
+      color: combo
+</route>
+    
 <script setup lang="ts">
 import { debug } from 'console';
 import { privateDecrypt } from 'crypto';
@@ -91,13 +98,10 @@ async function showCombosCheaperThan(price: string) {
 
         <h2>Combos</h2>
         <div class="tw-flex tw-flex-col tw-items-center">
-
             <w-button @click="showCombos()" class="rounded-full">
                 <div class="tw-text-md tw-px-2">Retornar Combos</div>
             </w-button>
-
             <div class="tw-my-2"></div>
-
             <form class="tw-flex tw-flex-col tw-items-center" action="" @submit.prevent="showCombosCheaperThan(comboPrice.toString())">
                 <label for="abaixode">Retornar Combos Abaixo de:</label>
                 <input class="tw-mt-5" id="abaixode" type="text" v-model="comboPrice">
@@ -105,10 +109,24 @@ async function showCombosCheaperThan(price: string) {
                     <div class="tw-text-md tw-px-2">Retornar</div>
                 </w-button>
             </form>
-
         </div>
 
-        <template v-if="combosAreShown && combos.length > 0">
+        <w-grid v-if="combosAreShown && combos.length > 0" class="tw-mt-3">
+            <w-card v-for="combo in combos[0]" :key="combo.name">
+
+                <template #footer>
+                    <div class="tw-text-lg">{{ combo.name }}</div>
+                    <div class="
+                        tw-text-[10pt]
+                        tw-opacity-80
+                        tw-mt-1
+                    ">
+                    </div>
+                </template>
+            </w-card>
+        </w-grid>
+
+        <!-- <template v-if="combosAreShown && combos.length > 0">
             <table class="tw-border-collapse tw-border tw-border-slate-500 tw-mt-5">
                 <thead>
                     <tr>
@@ -141,7 +159,7 @@ async function showCombosCheaperThan(price: string) {
                     </tr>
                 </tbody>
             </table>
-        </template>
+        </template> -->
 
 
     </div>

@@ -23,8 +23,7 @@ const colorsMap = {
     tw-font-[500]
     banner--${color}
   `">
-    Menu
-    <pre>{{ colorsMap[color] }}</pre>
+    <pre>{{ colorsMap[color.toString()] }}</pre>
   </div>
 
   <div>
