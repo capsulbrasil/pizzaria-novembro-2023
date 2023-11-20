@@ -2,13 +2,11 @@
     meta:
       title: Drink
       icon: drink
-      color: blue
 </route>
     
 <script setup lang="ts">
 import Combo from "../combo/combo.vue"
-const metaStore = useStore('meta')
-await metaStore.$actions.describe()
+
 
 </script>
 

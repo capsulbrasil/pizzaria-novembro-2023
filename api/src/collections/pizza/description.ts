@@ -8,8 +8,7 @@ export const [Pizza, description] = defineDescription({
   ],
   properties: {
     price: {
-      type: 'number',
-      minimum: 100
+      type: 'number'
     },
     ingredients: {
       type: 'array',

@@ -70,7 +70,6 @@ export const [Order, description] = defineDescription({
 
     customer: {
       $ref: "customer",
-      s$inline: true
     },
     name: {
       type: "string",

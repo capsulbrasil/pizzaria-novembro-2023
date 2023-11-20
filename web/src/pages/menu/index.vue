@@ -2,7 +2,6 @@
     meta:
       title: Menu
       icon: dashboard
-      color: pink
 </route>
     
 <template>

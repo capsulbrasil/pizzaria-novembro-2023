@@ -18,8 +18,7 @@ export const customer = defineCollection(() => ({
       guest: {
         grant: [
           'get',
-          'getAll',
-          'insert'
+          'getAll'
         ]
       }
     }

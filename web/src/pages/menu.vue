@@ -1,42 +1,14 @@
-<script setup lang="ts">
-const metaStore = useStore('meta')
-await metaStore.$actions.describe()
-
-const router = useRouter()
-const color = router.currentRoute.value.meta.color
-
-const colorsMap = {
-  pink: [
-    'tw-bg-pink-100',
-    'tw-border-pink-500'
-  ],
-  red: [
-    'tw-bg-red-100',
-    'tw-border-red-500'
-  ],
-}
-</script>
-
 <template>
-  <div :class="`
-    tw-text-${'lg'}
-    tw-font-[500]
-    banner--${color}
-  `">
-    Menu
-    <pre>{{ colorsMap[color] }}</pre>
-  </div>
+  <router-view></router-view>
+  <page-panel></page-panel>
 
-  <div>
-    <router-view></router-view>
+  <div class="tw-flex tw-place-items-center tw-flex-col">
+    <h1 class="tw-underline">{{ $route.meta.title }}</h1>
+    <pizza-view></pizza-view>
   </div>
-</template>
+</template> 
 
-<style lang="less">
-.banner {
-  &--pink {
-    background: pink;
-    border: hotpink;
-  }
-}
-</style>
+<script setup lang="ts">
+const metaStore = useStore('meta');
+await metaStore.$actions.describe();
+</script>

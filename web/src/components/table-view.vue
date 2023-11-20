@@ -16,7 +16,8 @@
 
   type TableArray = Array<{
       number: number,
-      characteristic: string
+      characteristic: string,
+      reserved: boolean
   }>
 
   async function getUnreservedTables(){
@@ -33,11 +34,12 @@
     return data.map(x=>{
       return {
         number: x.number,
-        characteristic: x.characteristic
+        characteristic: x.characteristic,
+        reserved: x.reserved
       }
     }).sort((a,b)=>a.number - b.number);
   }
 
   const unreservedTables = ref(await getUnreservedTables());
-  
+
 </script>
