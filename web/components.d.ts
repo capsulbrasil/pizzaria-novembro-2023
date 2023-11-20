@@ -15,6 +15,8 @@ declare module '@vue/runtime-core' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TableView: typeof import('./src/components/table-view.vue')['default']
+    WBox: typeof import('@waltz-ui/ui')['WBox']
     WButton: typeof import('@waltz-ui/ui')['WButton']
+    WInput: typeof import('@waltz-ui/ui')['WInput']
   }
 }

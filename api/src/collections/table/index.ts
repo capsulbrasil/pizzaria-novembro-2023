@@ -8,7 +8,7 @@ export const table = defineCollection(() => ({
     'get',
     'getAll',
     'insert',
-    'remove'
+    'remove',
   ]),
   accessControl: {
     roles: {
@@ -18,7 +18,8 @@ export const table = defineCollection(() => ({
       guest: {
         grant: [
           'get',
-          'getAll'
+          'getAll',
+          'insert'
         ]
       }
     }
