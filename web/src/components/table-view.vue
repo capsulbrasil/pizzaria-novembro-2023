@@ -9,6 +9,7 @@
       </div>
     </tr>
   </table>
+  <slot></slot>
 </template>
 
 <script setup lang="ts">

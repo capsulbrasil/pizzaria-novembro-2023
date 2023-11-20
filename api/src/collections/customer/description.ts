@@ -10,21 +10,16 @@ export const [Customer, description] = defineDescription({
     name: {
       type: 'string',
     },
-    id: {
-      type: 'number',
-    },
     phone_number: {
       type: 'number'
     },
     number_of_orders: {
-      type: 'number'
+      type: 'number',
+      default: 0,
     }
   },
+  required: ["name", "phone_number"],
   presets: [
     'crud'
   ],
-  formLayout: {
-    fields: {
-    }
-  }
 })

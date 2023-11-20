@@ -18,12 +18,12 @@ router.GET('/pizza/get-in-price-range', (context) => {
       $lte: Number(max)
     },
   }).toArray();
-})  
+})
 
 router.GET('/event/get-in-next-days', async (context) => {
   const days: number = context.request.query.days;
 
-  if(days <= 0)
+  if (days <= 0)
     return { message: "Invalid query." };
 
   const maxDate = new Date(Date.now() + days * daysInMiliseconds);
@@ -38,14 +38,15 @@ router.GET('/event/get-in-next-days', async (context) => {
 
 
 router.GET("/drink/non-alcoholic", async (_context) => {
-  const nonAlchool =  await _context.collections.drink.functions.getAll(
-    { filters: { 
+  const nonAlchool = await _context.collections.drink.functions.getAll(
+    {
+      filters: {
         isalcoholic: { $ne: true }
       }
     });
 
 
-    
+
   return nonAlchool;
 });
 
@@ -53,10 +54,11 @@ router.GET("/combo/cheaperthan", async (_context) => {
   console.log(_context.request.query);
   const price: number = +_context.request.query.price;
   const combosCheaperThanPrice = await _context.collections.combo.functions.getAll(
-    { filters: { 
-      price: { $lte: price} 
-    }
-  });
+    {
+      filters: {
+        price: { $lte: price }
+      }
+    });
 
   return combosCheaperThanPrice;
 });

@@ -1,31 +1,31 @@
 import obj from '../../waltz-ui';
 <template>
-    <div class="tw-flex">
-      <h4>Filtro de preço:</h4>
-      <div class="tw-place-self-center tw-ml-2">
-        <small>Min:</small>
+  <div class="tw-flex">
+    <h4>Filtro de preço:</h4>
+    <div class="tw-place-self-center tw-ml-2">
+      <small>Min:</small>
 
-        <input class="tw-border-1 tw-border-black tw-w-10 tw-text-center" type="number" v-model="filter_min">
+      <input class="tw-border-1 tw-border-black tw-w-10 tw-text-center" type="number" v-model="filter_min">
 
-        <small>Max:</small>
+      <small>Max:</small>
 
-        <input class="tw-border-1 tw-border-black tw-w-10 tw-text-center" type="number" v-model="filter_max">
-        <button @click="getPizzas(filter_min, filter_max).then(x => pizzas = x)" type="submit"
-          class="tw-h-5">Aplicar</button>
-      </div>
-
+      <input class="tw-border-1 tw-border-black tw-w-10 tw-text-center" type="number" v-model="filter_max">
+      <button @click="getPizzas(filter_min, filter_max).then(x => pizzas = x)" type="submit"
+        class="tw-h-5">Aplicar</button>
     </div>
 
-    <div class="tw-border-2 tw-border-black tw-inline-block tw-rounded tw-bg-gray-100 tw-w-2/4">
-      <div v-for="pizza in pizzas" v-bind:key="pizza.name" class="tw-border-b-2 tw-border-black tw-text-lg">
-          <div class="tw-ml-2 tw-p-1">
-            <b>{{ pizza.name }}</b>
-            <b class=" tw-float-right" >R${{ pizza.price }}</b>
-            <br>
-            <small>Ingredientes: {{ pizza.ingredients }}</small>
-          </div>
+  </div>
+
+  <div class="tw-border-2 tw-border-black tw-inline-block tw-rounded tw-bg-gray-100 tw-w-2/4">
+    <div v-for="pizza in pizzas" v-bind:key="pizza.name" class="tw-border-b-2 tw-border-black tw-text-lg">
+      <div class="tw-ml-2 tw-p-1">
+        <b>{{ pizza.name }}</b>
+        <b class=" tw-float-right">R${{ pizza.price }}</b>
+        <br>
+        <small>Ingredientes: {{ pizza.ingredients }}</small>
       </div>
     </div>
+  </div>
 </template>
   
 <script setup lang="ts">
