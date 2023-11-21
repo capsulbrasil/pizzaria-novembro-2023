@@ -41,7 +41,7 @@ const makeReservation = async () => {
 
   <pre>{{ tableStore.item }}</pre>
 
-  <w-form
+  <aeria-form
     v-model="tableStore.item"
     :form="tableStore.$actions.useProperties([
       'number',
@@ -49,16 +49,16 @@ const makeReservation = async () => {
       'reserved',
       'characteristic'
     ])"
-  ></w-form>
+  ></aeria-form>
 
-  <w-form
+  <aeria-form
     v-model="customerStore.item"
     :form="customerStore.properties"
-  ></w-form>
+  ></aeria-form>
 
-  <w-button @click="makeReservation">
+  <aeria-button @click="makeReservation">
     Reservar
-  </w-button>
+  </aeria-button>
 
   <!-- <div class="table-panel tw-ml-44 tw-mt-0"> -->
   <!--   <h1 class="tw-underline">Mesas Disponíveis</h1> -->

@@ -190,25 +190,25 @@ const openCart = () => {
 
 
     <div class="tw-flex tw-justify-center tw-my-3">
-        <w-button large @click="openCart">
+        <aeria-button large @click="openCart">
             Abrir carrinho
-        </w-button>
+        </aeria-button>
     </div>
 
-    <w-box fixed-right close-hint v-model="cartOpen" title="Carrinho" @overlay-click="cartOpen = false">
+    <aeria-panel fixed-right close-hint v-model="cartOpen" title="Carrinho" @overlay-click="cartOpen = false">
 
-        <w-form v-model="cart" :form="orderStore.$actions.useProperties([
+        <aeria-form v-model="cart" :form="orderStore.$actions.useProperties([
             'pizzas',
             'drinks',
             'combos',
             'customer',
             'name'
-        ])" collection="order"></w-form>
+        ])" collection="order"></aeria-form>
 
         <template #footer>
-            <w-button large @click="orderInsert">
+            <aeria-button large @click="orderInsert">
                 Fazer pedido
-            </w-button>
+            </aeria-button>
         </template>
-    </w-box>
+    </aeria-panel>
 </template>

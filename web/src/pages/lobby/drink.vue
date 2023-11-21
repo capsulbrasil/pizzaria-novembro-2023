@@ -54,18 +54,18 @@ async function showNonAlchoholDrinks() {
 
         <h2>Drinks</h2>
         <div class="tw-flex tw-flex-col tw-items-center">
-            <w-button @click="showDrinks()" class="rounded-full">
+            <aeria-button @click="showDrinks()" class="rounded-full">
                 <div class="tw-text-md tw-px-2">Retornar Bebidas</div>
-            </w-button>
+            </aeria-button>
             <div class="tw-my-2"></div>
 
-            <w-button @click="showNonAlchoholDrinks()" class="rounded-full ">
+            <aeria-button @click="showNonAlchoholDrinks()" class="rounded-full ">
                 <div class="tw-text-md tw-px-2">Retornar Bebidas Não Alcóolicas</div>
-            </w-button>
+            </aeria-button>
         </div>
 
-        <w-grid v-if="drinksAreShown && drinks.length > 0" class="tw-mt-3">
-            <w-card v-for="drink in drinks[0]" :key="drink.name">
+        <aeria-grid v-if="drinksAreShown && drinks.length > 0" class="tw-mt-3">
+            <aeria-card v-for="drink in drinks[0]" :key="drink.name">
                 <div class="tw-flex tw-justify-center">
                     <img class="tw-max-h-15" :src="drink.picture.download_link">
                 </div>
@@ -79,8 +79,8 @@ async function showNonAlchoholDrinks() {
                     </div>
                 </template>
 
-            </w-card>
-        </w-grid>        
+            </aeria-card>
+        </aeria-grid>        
 
         <!-- <template v-if="drinksAreShown && drinks.length > 0">
             <table class="tw-border-collapse tw-border tw-border-slate-500 tw-mt-5">

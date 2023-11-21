@@ -9,19 +9,18 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    AeriaBox: typeof import('@waltz-ui/ui')['AeriaBox']
+    AeriaButton: typeof import('@waltz-ui/ui')['AeriaButton']
+    AeriaCard: typeof import('@waltz-ui/ui')['AeriaCard']
+    AeriaCrud: typeof import('@waltz-ui/ui')['AeriaCrud']
+    AeriaForm: typeof import('@waltz-ui/ui')['AeriaForm']
+    AeriaGrid: typeof import('@waltz-ui/ui')['AeriaGrid']
+    AeriaPanel: typeof import('@waltz-ui/ui')['AeriaPanel']
     EventView: typeof import('./src/components/event-view.vue')['default']
     PagePanel: typeof import('./src/components/page-panel.vue')['default']
     PizzaView: typeof import('./src/components/pizza-view.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TableView: typeof import('./src/components/table-view.vue')['default']
-    WBadge: typeof import('@waltz-ui/ui')['WBadge']
-    WBox: typeof import('@waltz-ui/ui')['WBox']
-    WButton: typeof import('@waltz-ui/ui')['WButton']
-    WCard: typeof import('@waltz-ui/ui')['WCard']
-    WForm: typeof import('@waltz-ui/ui')['WForm']
-    WGrid: typeof import('@waltz-ui/ui')['WGrid']
-    WIcon: typeof import('@waltz-ui/ui')['WIcon']
-    WPanel: typeof import('@waltz-ui/ui')['WPanel']
   }
 }
