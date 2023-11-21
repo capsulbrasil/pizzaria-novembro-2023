@@ -23,6 +23,13 @@ export const [Table, description] = defineDescription({
     },
     reserved_by:{
       $ref: 'customer'
+<<<<<<< HEAD
+=======
+      // type: 'string',
+      // maxLength: 100,
+      // default: 'Não Reservado',
+      
+>>>>>>> refatoracaoVueMaisTaskPedidos
     }
   },
   

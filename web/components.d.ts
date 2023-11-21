@@ -9,6 +9,13 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    AeriaBox: typeof import('@waltz-ui/ui')['AeriaBox']
+    AeriaButton: typeof import('@waltz-ui/ui')['AeriaButton']
+    AeriaCard: typeof import('@waltz-ui/ui')['AeriaCard']
+    AeriaCrud: typeof import('@waltz-ui/ui')['AeriaCrud']
+    AeriaForm: typeof import('@waltz-ui/ui')['AeriaForm']
+    AeriaGrid: typeof import('@waltz-ui/ui')['AeriaGrid']
+    AeriaPanel: typeof import('@waltz-ui/ui')['AeriaPanel']
     EventView: typeof import('./src/components/event-view.vue')['default']
     PagePanel: typeof import('./src/components/page-panel.vue')['default']
     PizzaView: typeof import('./src/components/pizza-view.vue')['default']

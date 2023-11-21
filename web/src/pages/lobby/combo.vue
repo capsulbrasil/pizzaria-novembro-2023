@@ -1,11 +1,17 @@
-
+<route lang="yaml">
+    meta:
+      title: Combos 📦
+      icon: dashboard
+      color: combo
+</route>
+    
 <script setup lang="ts">
-import { condenseItem } from '@waltz-ui/web';
 import { debug } from 'console';
 import { privateDecrypt } from 'crypto';
 
 
 const comboStore = useStore("combo");
+const orderStore = useStore("order");
 
 let combos = reactive([])
 let combosAreShown = ref(false);
@@ -14,6 +20,23 @@ let comboPrice = ref(0);
 onMounted(async () => {
     getCombos()
 })
+
+const cart = reactive([])
+const cartOpen = ref(false)
+
+const addToCart = (combo: any) => {
+    cart.push(combo)
+    cartOpen.value = true
+}
+
+const orderInsertPayload = computed(() => {
+    const combos = orderStore.item.combos
+    return 
+})
+
+const order = () => {
+    return orderStore.$actions.deepInsert()
+}
 
 async function getCombos() {
     const result = await comboStore.$functions.getAll();
@@ -47,28 +70,41 @@ async function showCombosCheaperThan(price: string) {
 </script>
 
 <template>
+
+
     <div class="tw-flex tw-flex-col tw-items-center tw-py-4">
 
         <h2>Combos</h2>
         <div class="tw-flex tw-flex-col tw-items-center">
-
-            <w-button @click="showCombos()" class="rounded-full">
+            <aeria-button @click="showCombos()" class="rounded-full">
                 <div class="tw-text-md tw-px-2">Retornar Combos</div>
-            </w-button>
-
+            </aeria-button>
             <div class="tw-my-2"></div>
-
             <form class="tw-flex tw-flex-col tw-items-center" action="" @submit.prevent="showCombosCheaperThan(comboPrice.toString())">
                 <label for="abaixode">Retornar Combos Abaixo de:</label>
                 <input class="tw-mt-5" id="abaixode" type="text" v-model="comboPrice">
-                <w-button class="rounded-full tw-mt-5">
+                <aeria-button class="rounded-full tw-mt-5">
                     <div class="tw-text-md tw-px-2">Retornar</div>
-                </w-button>
+                </aeria-button>
             </form>
-
         </div>
 
-        <template v-if="combosAreShown && combos.length > 0">
+        <aeria-grid v-if="combosAreShown && combos.length > 0" class="tw-mt-3">
+            <aeria-card v-for="combo in combos[0]" :key="combo.name">
+
+                <template #footer>
+                    <div class="tw-text-lg">{{ combo.name }}</div>
+                    <div class="
+                        tw-text-[10pt]
+                        tw-opacity-80
+                        tw-mt-1
+                    ">
+                    </div>
+                </template>
+            </aeria-card>
+        </aeria-grid>
+
+        <!-- <template v-if="combosAreShown && combos.length > 0">
             <table class="tw-border-collapse tw-border tw-border-slate-500 tw-mt-5">
                 <thead>
                     <tr>
@@ -76,6 +112,7 @@ async function showCombosCheaperThan(price: string) {
                         <th class="tw-border tw-border-slate-600 tw-px-3">Preço</th>
                         <th class="tw-border tw-border-slate-600 tw-px-3">Pizzas</th>
                         <th class="tw-border tw-border-slate-600 tw-px-3">Bebidas</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -90,10 +127,17 @@ async function showCombosCheaperThan(price: string) {
                         <td class="tw-border tw-border-slate-700 tw-pl-3">
                             <li v-for="drink in combo.drinks">{{ drink.name }}</li>
                         </td>
+                        <td class="tw-border tw-border-slate-700 tw-pl-3">
+                            <div class="tw-p-2">
+                                <w-button @click="addToCart(combo)">
+                                    Adicionar
+                                </w-button>
+                            </div>
+                        </td>
                     </tr>
                 </tbody>
             </table>
-        </template>
+        </template> -->
 
 
     </div>

@@ -1,5 +1,5 @@
-import { useApp, userRoutes, dashboardRoutes, defineOptions, WMain } from 'waltz-ui'
-import { DashboardLayout, AuthWall } from 'waltz-tailwind-layout'
+import { useApp, userRoutes, dashboardRoutes, defineOptions, AeriaMain } from 'waltz-ui'
+import { DashboardLayout, AuthWall } from 'aeria-app-layout'
 import waltzPtbr from '@waltz-ui/i18n-ptbr'
 
 import '@waltz-ui/ui/style.css'
@@ -8,7 +8,7 @@ import '../static/main.css'
 import "@waltz-ui/ui/themes/default.less"
 
 const options = defineOptions({
-  component: WMain,
+  component: AeriaMain,
   dashboardComponent: DashboardLayout,
   routes: [
     userRoutes(() => AuthWall),
@@ -20,9 +20,7 @@ const options = defineOptions({
       pt_BR: waltzPtbr
     }
   },
-  menuSchema: {
-    start: {
-      children: [
+  menuSchema:  [
         '/dashboard/pizza',
         '/dashboard/table',
         '/dashboard/employee',
@@ -35,8 +33,7 @@ const options = defineOptions({
         '/dashboard/combo',
         '/dashboard/order'
       ]
-    }
-  }
+
 })
 
 useApp(options).then((app) => {

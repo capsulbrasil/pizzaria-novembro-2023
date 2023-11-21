@@ -85,7 +85,7 @@ export const [Order, description] = defineDescription({
     fields: {
       price:{
         if:{
-          operator:"notin",
+          operator:"equal",
           term1:"_id",
           term2:[
             null,
