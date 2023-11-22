@@ -56,7 +56,6 @@ declare global {
   const useAttrs: typeof import('vue')['useAttrs']
   const useBreakpoints: typeof import('waltz-ui')['useBreakpoints']
   const useClipboard: typeof import('waltz-ui')['useClipboard']
-  const useCondition: typeof import('waltz-ui')['useCondition']
   const useCssModule: typeof import('vue')['useCssModule']
   const useCssVars: typeof import('vue')['useCssVars']
   const useNavbar: typeof import('waltz-ui')['useNavbar']

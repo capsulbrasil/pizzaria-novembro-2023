@@ -36,9 +36,11 @@ import type {
 declare module 'vue-router/auto/routes' {
   export interface RouteNamedMap {
     '/': RouteRecordInfo<'/', '/', Record<never, never>, Record<never, never>>,
+    '/combo/': RouteRecordInfo<'/combo/', '/combo', Record<never, never>, Record<never, never>>,
     '/customer': RouteRecordInfo<'/customer', '/customer', Record<never, never>, Record<never, never>>,
     '/customer/reservar/': RouteRecordInfo<'/customer/reservar/', '/customer/reservar', Record<never, never>, Record<never, never>>,
     '/dashboard/': RouteRecordInfo<'/dashboard/', '/dashboard', Record<never, never>, Record<never, never>>,
+    '/drink/': RouteRecordInfo<'/drink/', '/drink', Record<never, never>, Record<never, never>>,
     '/events': RouteRecordInfo<'/events', '/events', Record<never, never>, Record<never, never>>,
     '/events/': RouteRecordInfo<'/events/', '/events', Record<never, never>, Record<never, never>>,
     '/lobby': RouteRecordInfo<'/lobby', '/lobby', Record<never, never>, Record<never, never>>,
@@ -49,6 +51,7 @@ declare module 'vue-router/auto/routes' {
     '/menu': RouteRecordInfo<'/menu', '/menu', Record<never, never>, Record<never, never>>,
     '/menu/': RouteRecordInfo<'/menu/', '/menu', Record<never, never>, Record<never, never>>,
     '/reservar': RouteRecordInfo<'/reservar', '/reservar', Record<never, never>, Record<never, never>>,
+    '/reservar/': RouteRecordInfo<'/reservar/', '/reservar', Record<never, never>, Record<never, never>>,
   }
 }
 
