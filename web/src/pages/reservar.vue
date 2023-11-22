@@ -4,35 +4,40 @@
 
     <div class="table-panel tw-flex tw-place-items-center tw-flex-col tw-mt-10">
     <h1 class="tw-underline">{{ $route.meta.title }}</h1>
-        <table-view>
-            <w-button class="tw-w-20 tw-font-bold" @click="reservePanel = true">
+        <table-view :tables="unreseverdTables">
+            <aeria-button class="tw-w-20 tw-font-bold" @click="reservePanel = true">
                 Reservar
-            </w-button> 
+            </aeria-button> 
         </table-view>
     </div>
 
-
     <teleport to="main" class="tw-text-center">
-        <w-box float close-hint  v-model="reservePanel" class="tw-text-center tw-font-bold">
-             <w-input v-model="tableNumber" class="tw-text-center tw-font-bold"> 
+        <aeria-panel float close-hint  v-model="reservePanel" class="tw-text-center tw-font-bold">
+             <aeria-input v-model="tableNumber" class="tw-text-center tw-font-bold"> 
                Digite o número da mesa: 
-             </w-input> 
-             <w-input v-model="userNumber" class="tw-text-center tw-font-bold"> 
-               Digite seu número:
-             </w-input> 
-             <w-button class="tw-w-11/12 tw-font-bold" @click="reserveTable(tableNumber, userNumber)">
-                Ok
-            </w-button> 
-        </w-box>
+             </aeria-input> 
+             <aeria-input v-model="userNumber" class="tw-text-center tw-font-bold"> 
+               Digite seu telefone:
+             </aeria-input> 
+             <div class="tw-flex">
+                <aeria-button class="tw-w-1/2 tw-mr-2 tw-font-bold" @click="reserveTable(tableNumber, userNumber)">
+                    Ok
+                </aeria-button> 
+                <aeria-button class="tw-w-1/2 tw-ml-2 tw-font-bold" @click="reservePanel = false">
+                    Cancelar    
+                </aeria-button> 
+             </div>
+
+        </aeria-panel>
     </teleport>  
 
     <teleport to="main" class="tw-text-center">
-        <w-box float close-hint v-model="errorPanel" class="tw-text-center tw-font-bold">
+        <aeria-panel float close-hint v-model="errorPanel" class="tw-text-center tw-font-bold">
              {{ errorText }}
-             <w-button class="tw-w-11/12 tw-font-bold tw-place-items-center" @click="errorPanel = false;">
+             <aeria-button class="tw-w-11/12 tw-font-bold tw-place-items-center" @click="errorPanel = false;">
                 Ok
-            </w-button> 
-        </w-box>
+            </aeria-button> 
+        </aeria-panel>
     </teleport>  
 
 
@@ -40,7 +45,6 @@
 
 <script setup lang="ts">
 
-       
     const metaStore = useStore('meta'), tableStore = useStore('table'), customerStore = useStore('customer');
 
     await metaStore.$actions.describe();
@@ -48,11 +52,35 @@
     const reservePanel = ref(false), errorPanel = ref(false);
     const tableNumber = ref(0), userNumber = ref(0);
     const errorText = ref("");
-
     
-    onMounted(() => {
-        console.log(tableView)
-    })
+
+    type TableArray = Array<{
+      number: number,
+      characteristic: string,
+      reserved: boolean
+    }>
+
+    async function getUnreservedTables(){
+
+        const request = await fetch('http://127.0.0.1:3000/api/table/get-unreserved', {
+        method: 'GET',
+        headers: {
+            Accept: 'application/json',
+        },  
+        });
+
+        const data: TableArray = await request.json();
+
+        return data.map(x=>{
+        return {
+            number: x.number,
+            characteristic: x.characteristic,
+            reserved: x.reserved
+        }
+        }).sort((a,b)=>a.number - b.number);
+    }
+    const unreseverdTables = ref(await getUnreservedTables());
+
     async function reserveTable(table_number: number, user_number: number)
     {
         reservePanel.value = false;
@@ -70,13 +98,13 @@
             },
         });
         
-       if(table == null)
+       if(Object.keys(table).length == 0)
        {
             errorPanel.value = true;
             errorText.value = "Mesa não encontrada!";
             return;
        }
-       if(customer == null)
+       if(Object.keys(customer).length == 0)
        {
             errorPanel.value = true;
             errorText.value = "Usuário não encontrado pelo telefone.";
@@ -90,5 +118,9 @@
                 reserved_by: customer["_id"]
             }
         });
+
+        const tableIndex = unreseverdTables.value.indexOf(unreseverdTables.value.find(x=>x.number == table_number));
+
+        unreseverdTables.value.splice(tableIndex, tableIndex == 0 ? 1 : tableIndex);
     }
 </script>

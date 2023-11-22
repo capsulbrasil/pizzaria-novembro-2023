@@ -5,19 +5,17 @@
     <div class="tw-flex tw-place-items-center tw-flex-col">
       <div class="tw-flex tw-place-items-center tw-flex-col">
         <h1 class="tw-underline">{{$route.meta.title1}}</h1>
-        <table class="tw-border-collapse tw-border-hidden">
-          <tr v-for="(row, rowIndex) in rows" :key="rowIndex">
-            <td v-for="(item, colIndex) in row" :key="colIndex"
-              class="tw-w-80 tw-bg-gray-100 tw-border-2 tw-pb-2 tw-border-black tw-pt-0 tw-align-top tw-rounded-md">
+        <aeria-grid class="tw-border-collapse tw-border-hidden">
+            <aeria-card v-for="item in sales"
+              class="tw-max-w-88 tw-bg-gray-100 tw-border-2 tw-border-black tw-max-h-44">
               <div>
-                <h3 class="tw-text-center tw-border-b tw-border-black "> {{ item.start_date.toLocaleDateString() }} - das {{
+                <h3 class="tw-text-center tw-border-b-2 tw-border-black"> {{ item.start_date.toLocaleDateString() }} - das {{
                   item.start_time }} ás {{ item.end_time }} </h3>
-                <div v-for="discount in item.discounts" class="tw-ml-2 tw-whitespace-nowrap">Pizza tamanho {{ discount.sizes
+                <div v-for="discount in item.discounts" class="tw-ml-2 tw-mr-2 tw-mb-2 tw-whitespace-nowrap">Pizza tamanho {{ discount.sizes
                 }} = {{ discount.percentage }}% de desconto</div>
               </div>
-            </td>
-          </tr>
-        </table>
+          </aeria-card>
+        </aeria-grid>
       </div>
   
       <div class="tw-flex tw-place-items-center tw-flex-col tw-mt-10">

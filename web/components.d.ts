@@ -12,9 +12,9 @@ declare module '@vue/runtime-core' {
     AeriaBox: typeof import('@waltz-ui/ui')['AeriaBox']
     AeriaButton: typeof import('@waltz-ui/ui')['AeriaButton']
     AeriaCard: typeof import('@waltz-ui/ui')['AeriaCard']
-    AeriaCrud: typeof import('@waltz-ui/ui')['AeriaCrud']
     AeriaForm: typeof import('@waltz-ui/ui')['AeriaForm']
     AeriaGrid: typeof import('@waltz-ui/ui')['AeriaGrid']
+    AeriaInput: typeof import('@waltz-ui/ui')['AeriaInput']
     AeriaPanel: typeof import('@waltz-ui/ui')['AeriaPanel']
     EventView: typeof import('./src/components/event-view.vue')['default']
     PagePanel: typeof import('./src/components/page-panel.vue')['default']
@@ -24,6 +24,6 @@ declare module '@vue/runtime-core' {
     TableView: typeof import('./src/components/table-view.vue')['default']
     WBox: typeof import('@waltz-ui/ui')['WBox']
     WButton: typeof import('@waltz-ui/ui')['WButton']
-    WInput: typeof import('@waltz-ui/ui')['WInput']
+    WForm: typeof import('@waltz-ui/ui')['WForm']
   }
 }

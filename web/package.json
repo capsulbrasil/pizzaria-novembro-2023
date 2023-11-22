@@ -5,14 +5,14 @@
   "main": "index.js",
   "scripts": {
     "serve": "bash -c 'NODE_PATH=./node_modules npx waltz-build -m serve'",
-    "build": "bash -c 'NODE_PATH=./node_modules npx waltz-build -m build'"
+    "build": "NODE_PATH=./node_modules npx waltz-build -m build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@waltz-ui/i18n-ptbr": "^0.0.2",
-    "waltz-tailwind-layout": "latest",
+    "aeria-app-layout": "latest",
     "waltz-ui": "latest"
   },
   "devDependencies": {

@@ -3,16 +3,16 @@ import { DashboardLayout, AuthWall } from 'aeria-app-layout'
 import waltzPtbr from '@waltz-ui/i18n-ptbr'
 
 import '@waltz-ui/ui/style.css'
-import 'waltz-tailwind-layout/style.css'
+import 'aeria-app-layout/style.css'
 import '../static/main.css'
-import "@waltz-ui/ui/themes/default.less"
+import '../static/main.less'
 
 const options = defineOptions({
   component: AeriaMain,
   dashboardComponent: DashboardLayout,
   routes: [
-    userRoutes(() => AuthWall),
-    dashboardRoutes(() => DashboardLayout),
+    userRoutes(AuthWall),
+    dashboardRoutes(DashboardLayout),
   ],
   i18n: {
     locale: 'pt_BR',
@@ -20,20 +20,17 @@ const options = defineOptions({
       pt_BR: waltzPtbr
     }
   },
-  menuSchema:  [
-        '/dashboard/pizza',
-        '/dashboard/table',
-        '/dashboard/employee',
-        '/dashboard/event',
-        '/dashboard/user',
-        '/dashboard/drink',
-        '/dashboard/combo',
-        '/dashboard/drink',
-        '/dashboard/customer',
-        '/dashboard/combo',
-        '/dashboard/order'
-      ]
-
+  menuSchema: [
+    '/dashboard/pizza',
+    '/dashboard/table',
+    '/dashboard/employee',
+    '/dashboard/event',
+    '/dashboard/user',
+    '/dashboard/drink',
+    '/dashboard/combo',
+    '/dashboard/customer',
+    '/dashboard/order'
+  ]
 })
 
 useApp(options).then((app) => {
